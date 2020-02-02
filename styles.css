@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    overflow-x: hidden;
+    height: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.preLoading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.isLoading canvas {
+    opacity: 1;
+}
+
+.loadingText {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: calc(50% - 50px);
+    text-align: center;
+    letter-spacing: 11px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity .5s ease-out, letter-spacing .5s ease-out;
+    pointer-events: none;
+}
+
+.isLoading .loadingText {
+    letter-spacing: 10px;
+    opacity: 1;
+}
+
+canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    user-select: none;
+    opacity: 1;
+    transition: opacity .5s ease-out .25s;
+}
